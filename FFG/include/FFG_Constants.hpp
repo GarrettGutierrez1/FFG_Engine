@@ -1,0 +1,97 @@
+#ifndef FFG_CONSTANTS_H_INCLUDED
+#define FFG_CONSTANTS_H_INCLUDED
+
+// Used in FFG_Engine:
+
+#define FFG_ENGINE_MINIMIZED_WAIT 16
+
+// Used in FFG_Renderer:
+
+#define FFG_RENDERER_DEFAULT_NAME "FFG_Engine"
+#define FFG_RENDERER_DEFAULT_WIDTH 800
+#define FFG_RENDERER_DEFAULT_HEIGHT 600
+#define FFG_RENDERER_DEFAULT_VSYNC true
+
+// Used in FFG_Event:
+
+enum FFG_EventType {
+	FFG_EVENT_EMPTY,
+	FFG_EVENT_KEYBOARD_DOWN,
+	FFG_EVENT_KEYBOARD_UP,
+	FFG_EVENT_MOUSE_MOTION,
+	FFG_EVENT_MOUSE_BUTTON_DOWN,
+	FFG_EVENT_MOUSE_BUTTON_UP,
+	FFG_EVENT_MOUSE_WHEEL_MOTION,
+	FFG_EVENT_WINDOW_EVENT
+};
+
+enum FFG_EventWindowEvent {
+	FFG_EVENT_WINDOW_NONE,
+	FFG_EVENT_WINDOW_MINIMIZE,
+	FFG_EVENT_WINDOW_MAXIMIZE,
+	FFG_EVENT_WINDOW_LOSTFOCUS,
+	FFG_EVENT_WINDOW_GAINEDFOCUS,
+	FFG_EVENT_WINDOW_CLOSE
+};
+
+enum FFG_EventMouseButton {
+	FFG_EVENT_BUTTON_NONE,
+	FFG_EVENT_BUTTON_LEFT,
+	FFG_EVENT_BUTTON_RIGHT,
+	FFG_EVENT_BUTTON_MIDDLE
+};
+
+enum FFG_EventKey {
+	FFG_EVENT_KEY_NONE,
+	FFG_EVENT_KEY_CHAR,
+	FFG_EVENT_KEY_LSHIFT,
+	FFG_EVENT_KEY_LCTRL,
+	FFG_EVENT_KEY_LALT,
+	FFG_EVENT_KEY_ENTER,
+	FFG_EVENT_KEY_BACKSPACE,
+	FFG_EVENT_KEY_TAB,
+	FFG_EVENT_KEY_UP,
+	FFG_EVENT_KEY_LEFT,
+	FFG_EVENT_KEY_DOWN,
+	FFG_EVENT_KEY_RIGHT,
+	FFG_EVENT_KEY_ESCAPE
+};
+
+// Used in FFG_Renderer:
+
+enum FFG_WindowMode {
+	FFG_WINDOW_WINDOWED,
+	// FFG_WINDOW_BORDERLESS,
+	// FFG_WINDOW_FULLSCREEN,
+	FFG_WINDOW_MATCHDESKTOP
+};
+
+enum FFG_WindowFlag {
+	FFG_WINFLAG_MINIMIZED,
+	FFG_WINFLAG_MAXIMIZED,
+	FFG_WINFLAG_INPUT_FOCUS,
+	FFG_WINFLAG_MOUSE_FOCUS
+};
+
+// Used in FFG_Texture:
+
+enum FFG_TextureType {
+	FFG_TEXTURE_STR,
+	FFG_TEXTURE_MEM,
+	FFG_TEXTURE_DRAWTO
+};
+
+// Used in various:
+
+enum FFG_Error {
+	FFG_RENDERER_SDL_FAIL,          // Used in FFG_Renderer. Thrown when SDL2 fails to be loaded.
+	FFG_RENDERER_IMG_FAIL,          // Used in FFG_Renderer. Thrown when SDL_Image fails to be loaded.
+	FFG_RENDERER_WINDOW_FAIL,       // Used in FFG_Renderer. Thrown when the window fails to be created.
+	FFG_RENDERER_RENDERER_FAIL,     // Used in FFG_Renderer. Thrown when the renderer fails to be created.
+	FFG_RENDERER_SIZE_FAIL,         // Used in FFG_Renderer. Thrown when the size of the screen fails to be queried.
+	FFG_RENDERER_STATIC_LOAD_FAIL,	// Used in FFG_Renderer. Thrown when a static_p texture fails to load on FFG_Renderer::init().
+	FFG_STATEMANAGER_OOB_ERROR,     // Used in FFG_StateManager.
+	FFG_STATE_GENERAL_ERROR         // To be used by the user.
+};
+
+#endif // FFG_CONSTANTS_H_INCLUDED

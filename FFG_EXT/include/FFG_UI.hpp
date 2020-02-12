@@ -1,0 +1,4 @@
+#ifndef FFG_EXT_UI_H_INCLUDED
+#define FFG_EXT_UI_H_INCLUDED
+
+#endif // FFG_EXT_UI_H_INCLUDED

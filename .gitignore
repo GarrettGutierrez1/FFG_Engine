@@ -1,0 +1,8 @@
+*.cfg
+*.exe
+*.o
+*.png
+*.xml
+.vscode/ipch
+doxygen
+!test/images/*.png
